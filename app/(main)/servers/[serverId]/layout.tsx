@@ -16,7 +16,7 @@ const ServerIdLayout = async ({
   if (!profile) return redirectToSignIn();
   const server = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: params?.serverId,
       members: {
         some: {
           profileId: profile.id,
@@ -27,7 +27,7 @@ const ServerIdLayout = async ({
   if (!server) return redirect("/");
   return <div className="h-full">
     <div className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
-        <ServerSideBar serverId={params.serverId} />
+        <ServerSideBar serverId={params?.serverId} />
     </div>
     <main className="h-full md:pl-60">
     {children}

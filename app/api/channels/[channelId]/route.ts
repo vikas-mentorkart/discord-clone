@@ -18,7 +18,7 @@ export async function DELETE(
     if (!serverId)
       return new NextResponse("Server ID missing", { status: 400 });
 
-    if (!params.channelId)
+    if (!params?.channelId)
       return new NextResponse("Channel ID missing", { status: 400 });
 
     const server = await db.server.update({
@@ -36,7 +36,7 @@ export async function DELETE(
       data: {
         channels: {
           delete: {
-            id: params.channelId,
+            id: params?.channelId,
             name: {
               not: "general",
             },
@@ -67,7 +67,7 @@ export async function PATCH(
     if (!serverId)
       return new NextResponse("Server ID missing", { status: 400 });
 
-    if (!params.channelId)
+    if (!params?.channelId)
       return new NextResponse("Channel ID missing", { status: 400 });
 
     if(name ==="general") return new NextResponse("Channel name can not be general");
@@ -90,7 +90,7 @@ export async function PATCH(
         channels: {
            update:{
             where:{
-              id:params.channelId,
+              id:params?.channelId,
               NOT:{
                 name:"general"
               }

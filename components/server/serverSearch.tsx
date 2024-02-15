@@ -42,7 +42,7 @@ const ServerSearch = ({ data }: serverSearchProps) => {
 const handleClick =({id, type}:{id:string, type:"channel"|"member"})=>{
      setIsOpen(false);
      if(type=="channel")return router.push(`/servers/${params?.serverId}/channels/${id}`);
-     if(type=="member")return router.push(`/servers/${params.serverId}/conversations/${id}`)
+     if(type=="member")return router.push(`/servers/${params?.serverId}/conversations/${id}`)
 }
   return (
     <>

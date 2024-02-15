@@ -64,7 +64,7 @@ const ChatItem = ({
     form.reset({
       content: message?.content,
     });
-  }, [message?.content]);
+  }, [message?.content, form]);
 
   const fileType = message?.fileUrl?.split(".").pop();
   const isUpdated = message?.createdAt != message?.updatedAt;

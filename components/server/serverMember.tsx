@@ -28,7 +28,7 @@ const ServerMember = ({member, server}:serverMemberProps) => {
     items-center gap-x-2 w-full
      hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 
      tarnsition mb-1`,
-        params.memberId == member.id && "bg-zinc-700/20 dark:bg-zinc-700"
+        params?.memberId == member.id && "bg-zinc-700/20 dark:bg-zinc-700"
       )}
     >
       <UserCard
@@ -40,7 +40,7 @@ const ServerMember = ({member, server}:serverMemberProps) => {
           `font-semibold text-sm text-zinc-500
     group-hover:text-zinc-600 dark:text-zinc-400
      dark:group-hover:text-zinc-300 transition`,
-          params.memberId == member.id &&
+          params?.memberId == member.id &&
             "text-primary dark:text-zinc-200 dark:group-hover:text-white"
         )}
       >

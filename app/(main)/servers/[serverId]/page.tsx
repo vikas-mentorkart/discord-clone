@@ -14,7 +14,7 @@ const ServerPage = async ({ params }: serverPageProps) => {
   if (!profile) return redirectToSignIn();
   const server = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: params?.serverId,
       members: {
         some: {
           profileId: profile.id,

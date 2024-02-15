@@ -12,7 +12,7 @@ export async function PATCH(
     if (!profile) return new NextResponse("Unauthorized", { status: 401 });
     const server = await db.server.update({
       where: {
-        id: params.serverId,
+        id: params?.serverId,
         profileId: profile.id,
       },
       data: {
@@ -36,7 +36,7 @@ export async function DELETE(
     if (!profile) return new NextResponse("Unauthorized", { status: 401 });
     const server = await db.server.delete({
       where: {
-        id: params.serverId,
+        id: params?.serverId,
         profileId: profile.id,
       },
     });

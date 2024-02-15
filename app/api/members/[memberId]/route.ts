@@ -11,7 +11,7 @@ export async function DELETE(
     const { searchParams } = new URL(req.url);
     const serverId = searchParams.get("serverId");
     if (!profile) return new NextResponse("Unauthorized", { status: 401 });
-    if (!params.memberId)
+    if (!params?.memberId)
       return new NextResponse("Member ID required", { status: 400 });
     if (!serverId)
       return new NextResponse("Server ID required.", { status: 400 });
@@ -23,7 +23,7 @@ export async function DELETE(
       data:{
         members:{
           deleteMany:{
-            id: params.memberId,
+            id: params?.memberId,
             profileId:{
               not: profile.id
             }
@@ -59,7 +59,7 @@ export async function PATCH(
     const serverId = searchParams.get("serverId");
     const {role} = await req.json();
     if (!profile) return new NextResponse("Unauthorized", { status: 401 });
-    if (!params.memberId)
+    if (!params?.memberId)
       return new NextResponse("Member ID required", { status: 400 });
     if (!serverId)
       return new NextResponse("Server ID required.", { status: 400 });
@@ -73,7 +73,7 @@ export async function PATCH(
         members: {
           update: {
             where: {
-              id: params.memberId,
+              id: params?.memberId,
               profileId: {
                 not: profile.id,
               },

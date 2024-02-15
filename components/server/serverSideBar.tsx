@@ -141,10 +141,9 @@ const ServerSideBar = async ({ serverId }: { serverId: string }) => {
               label="Text Channels"
             />
             {textChannels?.map((channel: Channel,i:number) => (
-              <div className="space-y-[2px]">
+              <div className="space-y-[2px]" key={i}>
                 {" "}
                 <ServerChannel
-                  key={i}
                   channel={channel}
                   role={role}
                   server={server}
@@ -163,10 +162,9 @@ const ServerSideBar = async ({ serverId }: { serverId: string }) => {
               label="Voice Channels"
             />
             {audioChannels?.map((channel: Channel,i:number) => (
-              <div className="space-y-[2px]">
+              <div className="space-y-[2px]" key={i}>
                 {" "}
                 <ServerChannel
-                  key={i}
                   channel={channel}
                   role={role}
                   server={server}
@@ -185,10 +183,9 @@ const ServerSideBar = async ({ serverId }: { serverId: string }) => {
               label="Video Channels"
             />
             {videoChannels?.map((channel: Channel,i:number) => (
-              <div className="space-y-[2px]">
+              <div className="space-y-[2px]" key={i}>
                 {" "}
                 <ServerChannel
-                  key={i}
                   channel={channel}
                   role={role}
                   server={server}
