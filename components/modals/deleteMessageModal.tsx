@@ -48,7 +48,7 @@ export const DeleteMessageModal = () => {
         </DialogHeader>
         <DialogDescription className="text-center text-zinc-500">
           Are you sure you want to do this?{" "}<br/>
-          The message will be delted permanently.
+          The message will be deleted permanently.
         </DialogDescription>
         <DialogFooter className="bg-gray-100 px-6 py-4 ">
           <div className="flex items-center justify-between w-full">

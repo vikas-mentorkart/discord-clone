@@ -18,7 +18,7 @@ export const VideoChatButton = () => {
   const searchParams = useSearchParams();
 
   const isVideo = searchParams?.get("video");
-  const label = isVideo ? "Start video call" : "End video call";
+  const label = isVideo ? "End video call" : "Start video call";
 
   const handleClick = () => {
     const url = queryString.stringifyUrl(

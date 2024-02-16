@@ -106,7 +106,7 @@ export default async function handler(
         },
         data: {
           fileUrl: null,
-          content: "This message was delted.",
+          content: "This message was deleted.",
           deleted: true,
         },
         include: {
